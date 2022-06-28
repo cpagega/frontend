@@ -1,0 +1,40 @@
+
+.search {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    text-align: center;
+    display:flex;
+    
+}
+
+.search-entry {
+    width:20rem;
+    height:3rem;
+}
+
+.search-date-start {
+    margin-top: .1em;
+    height: 3rem;
+}
+
+.search-date-end {
+    margin-top: .1rem;
+    height: 3rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.search-button {
+    height: 4em;
+    width: 7em;
+    border-radius: 3em;
+    margin-top: -1;
+    padding: .6em 1.3em;
+    color: rgb(47, 79, 79);
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: rgb(247, 248, 248);
+}

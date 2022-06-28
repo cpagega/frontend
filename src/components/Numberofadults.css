@@ -1,0 +1,15 @@
+.dropdown {
+    position: absolute;
+    top: 45.5%;
+    left: 40%;
+    text-align: center;
+    display: flex;
+    
+}
+
+select {
+    width: 10em;
+    height: 2em;
+    border-radius: .2em;
+    font-size: 1em;
+}
