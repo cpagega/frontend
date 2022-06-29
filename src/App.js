@@ -1,12 +1,13 @@
 import './App.css';
 import React, {useState} from 'react';
 import Search from './components/Search';
+import ResultList from './components/ResultList';
 import axios from 'axios';
 
 
 
 function App() {
-  const [getMessage, setGetMessage] = useState('');
+  const [getMessage, setGetMessage] = useState([]);
   const searchHandler = (params) => {
     axios.get('http://localhost:5000/flask/search', params)
     .then(response =>{
@@ -22,7 +23,7 @@ function App() {
     <div>
     {/* <Navigator /> */}
     <Search onSearch={searchHandler}/>
-
+    <ResultList data={getMessage}/>
     </div>
   );
 }
