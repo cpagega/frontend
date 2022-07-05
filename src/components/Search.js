@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import './Search.css';
 import NumberOfAdults from './Numberofadults';
+
+
 const Search = (props) => {
-    
+
     const [searchData, setSearchData] = useState({
-        search: "",
-        startDate: "",
-        endDate: "",
-        numAdults: "1"
+        search: ""
+       // startDate: "",
+       // endDate: "",
+       // numAdults: "1"
     });
 
     const handleSearch = (e) => {
@@ -40,11 +42,12 @@ const Search = (props) => {
         props.onSearch({params:searchData});
         setSearchData(previousState => {
             return{...previousState, 
-                    search: "",
-                    startDate: "",
-                    endDate: ""
+                    search: ""
+                    //startDate: "",
+                    //endDate: ""
                     };
         });
+        
     } 
 
     
@@ -53,7 +56,7 @@ const Search = (props) => {
         <div className='search'>
             <form onSubmit={handleSubmit}>
                 <NumberOfAdults onSelection={handleSelect}/>
-                <input value={searchData.search} onChange={handleSearch} type='text' placeholder="Search..." className='search-entry' />
+                <input value={searchData.search} onChange={handleSearch} type='text' placeholder="Search airport code..." className='search-entry' />
                 <input value={searchData.startDate} onChange={handleStartDate} type='date' className='search-date-start'/>
                 <input value={searchData.endDate} onChange={handleEndDate} type='date' className='search-date-end'/>
                 <button type='submit' className="search-button">Search</button>         
