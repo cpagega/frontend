@@ -6,10 +6,10 @@ import NumberOfAdults from './Numberofadults';
 const Search = (props) => {
 
     const [searchData, setSearchData] = useState({
-        search: ""
-       // startDate: "",
-       // endDate: "",
-       // numAdults: "1"
+        search: "",
+        startDate: "",
+        endDate: "",
+        numAdults: "1"
     });
 
     const handleSearch = (e) => {
@@ -42,15 +42,13 @@ const Search = (props) => {
         props.onSearch({params:searchData});
         setSearchData(previousState => {
             return{...previousState, 
-                    search: ""
-                    //startDate: "",
-                    //endDate: ""
+                    search: "",
+                    startDate: "",
+                    endDate: ""
                     };
         });
         
     } 
-
-    
 
     return (
         <div className='search'>

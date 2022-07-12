@@ -1,0 +1,107 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+$Raleway:'Raleway', sans-serif;
+$red:#f6685e;
+$blue_bg:#241a71;
+$grey:#e9e8f0;
+$white:#fff;
+
+body{
+    width:100%;  
+    display:block;
+    height:100vh;
+    overflow: hidden;  
+    font-family: $Raleway; 
+    position: relative;
+}
+.dFlex{
+    display:flex;
+    justify-content: center;
+    align-items:center
+}
+
+.container{
+    width:100%;
+    height:100vh;
+    display:flex;
+    position:relative;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #03a9f43b, white,white);
+    transform-style: preserve-3d;
+    flex-direction: column;
+    img{
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+}//container
+
+header{
+    @extend .dFlex;
+    width:100%;
+    height:80px;
+    margin:0 auto;
+    padding:0 10%;
+    color:$blue_bg;
+    box-sizing: border-box;
+    nav{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        width:100%;
+        .navbar{
+            @extend .dFlex;
+            .logo{
+                font-size:16px;
+                font-weight: bold;
+                margin-right:50px;
+                text-transform: uppercase;
+                color:$blue_bg;
+                span{
+                    color:$red;
+                }
+            }
+            ul{
+                margin:0;
+                padding: 0;
+                list-style-type: none;
+                @extend .dFlex;
+                li{
+                    font-size:12px;
+                    font-weight:500;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    +li{
+                        margin-left:15px;
+                    }
+                }//li
+            }//ul
+        }//menu
+
+        .myAccount{
+            .ctaGroup{
+                @extend .dFlex;
+                .cta{
+                    width:135px;
+                    height:35px;
+                    border:1px solid $red;
+                    font-size:12px;
+                    font-weight: 500;
+                    border-radius: 35px;
+                    color:$red;
+                    @extend .dFlex;
+                    cursor: pointer;
+                    +.cta{
+                        margin-left:15px;
+                    }
+                    &.active{
+                        background-color:$red;
+                        color:$white;
+                    }
+                }
+            }//ctaGroup
+        }//myAccount
+    }//nav
+}//header
